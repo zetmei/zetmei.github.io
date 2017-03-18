@@ -1,0 +1,593 @@
+/*------------------------------------------------------------------
+Theme Name: 案件名稱
+Author URI: #
+Description: Layout css
+Author: zetmei, Inc.
+------------------------------------------------------------------*/
+@charset "utf-8";
+@import "reset.css";
+@import url(https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700);
+
+/*------------------------------------------------------------------
+Main Layout
+------------------------------------------------------------------*/
+body { 
+	/* color:#000; 
+	font-family:"Teko",Arial,"微軟正黑體"; 
+	font-size:18px; 
+	background:url(../images/bg/01.png) center 0 no-repeat; 
+	min-height: 6495px; */
+}
+a{
+	line-height: initial;
+}
+::selection {
+	color: #fff;
+	background-color:#333;
+}
+header.header{ 
+	width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    background-color: #fff;
+    z-index: 2000;
+    max-width: 1366px;
+    margin: 0px auto;
+    padding: 30px 0px;
+    border-bottom: #fbcc68 5px solid;
+    overflow: auto;
+}
+.logo{
+	display: block;
+    width: 200px;
+    margin-left: 20px;
+    float: left;
+}
+.gnav{
+	float:right;
+	margin-right: 20px;
+}
+.gnav li{
+	display: inline-block;
+	margin:20px 40px;
+	border-bottom: 3px solid #ffffff;
+	border-top: 3px solid #ffffff;
+}
+.gnav li:hover{
+	border-bottom: 3px solid #636363;
+	border-top: 3px solid #636363;
+}
+.gnav li a,.gnav li a span{
+	display: inline-block;
+}
+.gnav li a{
+	color: #484848;
+	
+}
+.gnav li a:hover{
+	/* background-color:#fff070;		 */
+	/* font-weight: bold; */
+	
+}
+.gnav li a span{
+	transition: .5s;
+}
+.gnav li a:hover span{
+	-webkit-transform: rotateX(360deg);
+	transform: rotateX(360deg);
+}
+
+
+/* ---- 分類瀑布流 ---- */
+.grid {
+  background: #DDD;
+  max-width: 100%;
+}
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.button-group {
+    margin-bottom: 0;
+}
+.button-group .button{
+    margin: 0;
+    margin-right: 0px;
+    margin-bottom: 45px;
+    font-size: 16px;
+    padding: 1em 2em;
+    margin-top: 45px;
+    line-height: initial;
+    background-color: #fff;
+    color: #6f6575;
+    transition: 0s;
+}
+.button-group .button:hover{
+	background-color: #FBCC68;
+	color: #fff;
+}
+.button-group .button.is-checked{
+	background-color: #FBCC68;
+	color: #fff;
+}
+/* ---- 分類瀑布流 ---- */
+
+/* .grid-item {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #0D8;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.7);
+} */
+.grid-sizer{ width: 33.3%; }
+.element-item{
+	padding: 0 .2rem .4rem .2rem;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);   
+    filter: grayscale(100%);
+    transition: 0s;
+
+}
+.element-item:hover{
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);   
+    filter: grayscale(0%);
+	transition: 1s;
+}
+.element-item img{
+	width: 100%;
+}
+/* 網頁技術 */
+section.skills{
+	padding: 4.375rem;
+    border: 4.338rem solid #e9e9e8;
+}
+section.skills h3{
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 40px;
+	font-weight: bold;
+	margin-top: 3rem;
+}
+section.skills h3 span{	
+	border-bottom:5px solid #fbcc68;
+}
+section.skills p{
+    font-size: 20px;
+    text-align: center;
+}
+section.skills .divButton{
+	text-align: center;
+}
+section.skills .button{
+    padding: 1em 2em;
+    line-height: initial;
+    margin-top: 40px;
+    margin-bottom: 0;	
+}
+/* 關於我 */
+section.about{
+    border-top: 4.338rem solid #fff;
+    border-right: 4.338rem solid #fff;
+    border-left: 4.338rem solid #fff;
+    border-bottom: 70px solid #fff;
+}
+section.about .introCard{
+	background-color: #fac549;
+	max-width: 100%;
+	-moz-box-shadow: 15px 15px 0px #f7f7f7;
+	-webkit-box-shadow: 15px 15px 0px #f7f7f7;
+	box-shadow: 15px 15px 0px #f7f7f7;
+}
+section.about .introCard .right{
+	padding: 70px 70px 0 7px;
+}
+section.about .right h3{
+	text-align: left: ;
+	font-size: 18px;
+	margin-bottom: 25px;
+	font-weight: bold;
+}
+section.about .right h3 span{	
+	border-bottom: 5px solid #fefefe;
+    display: inline-block;
+    width: 60px;
+    height: 18px;
+    letter-spacing: 1px;
+}
+section.about .right p{
+	color: #fff;
+	letter-spacing: 1px;
+	margin-bottom: 55px;
+}
+/* 左邊 */
+section.about .left{
+	position: relative;
+	padding: 50px 80px 0 80px;
+}
+section.about .left .whiteBallGroup{
+	position: relative;
+}
+section.about .left .whiteBallGroup .imgWrap{
+    position: relative; 
+ 	max-width: 292px;
+    max-height: 292px;
+    width: 100%;
+    height: 100%;
+}
+section.about .left .whiteBorder1{
+	height: 102%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: #fff;
+    border-radius: 50%;
+    transform:rotate(0deg);
+   -webkit-animation: whiteBorder1 5s 0s  cubic-bezier(0,0,1,1) infinite; 
+    animation: whiteBorder1 5s 0s  cubic-bezier(0,0,1,1) infinite;
+}
+@keyframes whiteBorder1 {
+	0% {transform:rotate(0deg);}
+   25% {transform:rotate(-65deg);}
+   50% {transform:rotate(35deg);}
+   75% {transform:rotate(-10deg);}
+   90% {transform:rotate(50deg);}	
+  100% {transform:rotate(0deg);}	
+}
+section.about .left .whiteBorder2{
+	height: 102%;
+    width: 100%;
+    position: absolute;
+    top: -2%;
+    left: 0%;
+    background: #fff;
+    border-radius: 50%;
+    transform:rotate(0deg);
+   -webkit-animation: whiteBorder2 5s 0s  cubic-bezier(0,0,1,1) infinite; 
+    animation: whiteBorder2 5s 0s  cubic-bezier(0,0,1,1) infinite;
+}
+@keyframes whiteBorder2 {
+	0% {transform:rotate(0deg);}
+   25% {transform:rotate(-60deg);}
+   50% {transform:rotate(35deg);}
+   75% {transform:rotate(-10deg);}
+   90% {transform:rotate(80deg);}	
+  100% {transform:rotate(0deg);}	
+}
+section.about .left img{
+	width: 100%;
+	border: 10px solid #fff;
+    border-radius: 50%;
+    /* transform: rotateX(0deg);
+    float: left; */
+    display: block;
+    position: relative;
+    z-index: 99;
+}
+section.about .left .text{
+	position: relative;
+    text-align: right;
+    /* margin: 0 8rem; */
+}
+section.about .left h3{
+	font-size: 36px;
+    margin-bottom: 0;
+    font-weight: normal;
+    line-height: 36px;
+    color: #fff;
+    clear: both;
+}
+section.about .left p{
+    color: #fff;
+    font-size: 19px;
+    letter-spacing: 0px;
+    margin-bottom: 55px;
+}
+/* 小白球 */
+.whiteBall{
+	position: absolute;
+	background:#fff;
+	border-radius: 50%;
+	z-index:10;  
+}
+.whiteBall1,.whiteBall2,.whiteBall3,.whiteBall4,.whiteBall5,.whiteBall6{
+	transition: .2s;
+}
+.whiteBall1:hover,.whiteBall2:hover,
+.whiteBall3:hover,.whiteBall4:hover,
+.whiteBall5:hover,.whiteBall6:hover{
+	transform: scale(1.2);
+}
+.whiteBall1{	
+	width:100px;
+	height:100px;
+	top:20px;
+	right:120px;
+   -webkit-animation: whiteballMove1 7s 0s  cubic-bezier(0,0,1,1) infinite; 
+    animation: whiteballMove1 7s 0s  cubic-bezier(0,0,1,1) infinite;
+}
+@-webkit-keyframes whiteballMove1 {
+	0% {top:20px;right:120px;}
+   25% {top:10px;right:100px;}
+   50% {top:30px;right:130px;}
+   75% {top:40px;right:150px;}
+   90% {top:20px;right:140px;}	
+  100% {top:20px;right:120px;}	
+}
+.whiteBall2{	
+	width:50px;
+	height:50px;
+	top:80px;
+	right:30px;
+   -webkit-animation: whiteballMove2 5s 0s  cubic-bezier(0,0,1,1) infinite; 
+    animation: whiteballMove2 5s 0s  cubic-bezier(0,0,1,1) infinite;
+}
+@-webkit-keyframes whiteballMove2 {
+	0% {top:80px;right:30px;}
+   25% {top:82px;right:32px;}
+   50% {top:70px;right:25px;}
+   75% {top:82px;right:20px;}
+   90% {top:70px;right:25px;}	
+  100% {top:80px;right:30px;}	
+}
+.whiteBall3{	
+	width:100px;
+	height:102px;
+    bottom: 98px;
+    left: -45px;
+    transform:rotate(0deg);
+   -webkit-animation: whiteballMove3 2s 0s  cubic-bezier(0,0,1,1) infinite; 
+    animation: whiteballMove3 2s 0s  cubic-bezier(0,0,1,1) infinite;
+}
+@-webkit-keyframes whiteballMove3 {
+	0% {
+		-webkit-transform:rotate(0deg);
+		-ms-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+   25% {
+   	-webkit-transform:rotate(-35deg);
+   	-ms-transform:rotate(-35deg);
+   	transform:rotate(-35deg);
+   }
+   50% {
+   	-webkit-transform:rotate(35deg);
+   	-ms-transform:rotate(35deg);
+   	transform:rotate(35deg);
+   }
+   75% {
+   	-webkit-transform:rotate(-10deg);
+   	-ms-transform:rotate(-10deg);
+   	transform:rotate(-10deg);
+   }
+   90% {
+   	-webkit-transform:rotate(20deg);
+   	-ms-transform:rotate(20deg);
+   	transform:rotate(20deg);
+   }	
+  100% {
+  	-webkit-transform:rotate(0deg);
+  	-ms-transform:rotate(0deg);
+  	transform:rotate(0deg);
+  }	
+}
+@keyframes whiteballMove3 {
+	0% {transform:rotate(0deg);}
+   25% {transform:rotate(-35deg);}
+   50% {transform:rotate(35deg);}
+   75% {transform:rotate(-10deg);}
+   90% {transform:rotate(20deg);}	
+  100% {transform:rotate(0deg);}	
+}
+.whiteBall4{	
+	width:38px;
+	height:42px;
+    bottom: 90px;
+    left: -45px;
+   -webkit-animation: whiteballMove4 2s 0s  cubic-bezier(0,0,1,1) infinite; 
+    animation: whiteballMove4 2s 0s  cubic-bezier(0,0,1,1) infinite;
+}
+@-webkit-keyframes whiteballMove4 {
+	0% {transform:rotate(0deg);}
+   25% {transform:rotate(-35deg);}
+   50% {transform:rotate(35deg);}
+   75% {transform:rotate(-10deg);}
+   90% {transform:rotate(20deg);}	
+  100% {transform:rotate(0deg);}	
+}
+.whiteBall5{	
+    width: 11px;
+    height: 11px;
+    bottom: 77px;
+    left: -45px;
+   -webkit-animation: whiteballMove5 2s 0s  cubic-bezier(0,0,1,1) infinite;
+}
+.whiteBall6{	
+	width:70px;
+	height:70px;
+	bottom:0%;
+	right:50%;
+   -webkit-animation: whiteballMove6 8s .5s  cubic-bezier(0,0,1,1) infinite; 
+    animation: whiteballMove6 8s .5s  cubic-bezier(0,0,1,1) infinite;
+}
+@-webkit-keyframes whiteballMove6 {
+	0% {bottom:0%;right:50%;}
+   25% {bottom:1%;right:52%;}
+   50% {bottom:-5%;right:48%;}
+   75% {bottom:2%;right:40%;}
+   90% {bottom:-2%;right:44%;}	
+  100% {bottom:0%;right:50%;}	
+}
+
+/*  @-webkit-keyframes whiteballShow {
+	0% {-webkit-transform: scale(0);
+		-ms-transform: scale(0);
+		transform: scale(0);
+	}
+  65% {	-webkit-transform: scale(1.15);
+  		-ms-transform: scale(1.15);
+  		transform: scale(1.15)
+  	}
+  100% {-webkit-transform: scale(1);
+  		-ms-transform: scale(1);
+		transform: scale(1);
+	}	
+}
+@keyframes whiteballShow {
+   10% {transform: scale(0);}
+   65% {transform: scale(1.15);}
+  100% {transform: scale(1);}	
+} */
+
+	
+/* copyR */
+.copyRight{
+	color: #fac549;
+    display: block;
+    text-align: center;
+    position: relative;
+    top: 43px;
+    line-height: initial;
+}
+
+
+
+
+
+
+
+
+
+
+div.footer{
+	position: relative;
+	top:10px;
+	z-index: 100;
+	background-color:#000;
+	opacity: .2; 	
+}
+
+
+
+@media screen and (max-width: 1024px) {
+	section.about .introCard .right {
+	    padding: 0 4.35rem;
+	}
+
+}
+@media screen and (max-width: 768px) {
+	.button-group{
+		margin: 10px 0;
+	}
+
+	.button-group .button {
+	    font-size: 14px;
+	    padding: 5px 5px;
+	    line-height: initial;
+	    background-color: #fff;
+	    color: #6f6575;
+	    transition: 0s;
+	    margin: 0;
+	   /*  margin: 20px auto; */
+	    padding: 20px 10px;
+	}
+	.grid-sizer {
+	    width: 50%;
+	}
+}
+@media screen and (max-width: 720px) {
+	header.header {
+	    padding: 10px 0 10px 0px;
+   	    position: fixed;
+   	    left: 0;
+   	    top: 0;
+   	    z-index: 999;
+	}
+	header.header.active{
+		box-shadow: 3px 3px rgba(72, 72, 72, 0.49);
+	}
+	.layoutPage{
+		position: relative;
+    	top: 55.2px;
+	}
+	.logo {
+	    display: block;
+	    width: 110px;
+	    margin-left: 15px;
+	    float: left;
+	}
+	.menu{
+		float: right;
+	    margin-right: 0;
+	    list-style-type: none;
+	    padding-top: 5px;
+	    padding-right: 15px;
+	    cursor: pointer;
+	    padding-left: 15px;
+	    padding-bottom: 5px;	
+	}
+	.menu .menuA,.menu .menuB,.menu .menuC{
+		display: block;
+	    width: 30px;
+	    height: 2px;
+	    background: #636363;
+	    margin-top: 3px;
+	}
+	.gnav {
+	    float: none;
+	    margin-right: 0px;
+	    margin: 0;
+	    margin-top: 20px;
+	    display: none;
+	}
+	.gnav.active {
+	    display: block;
+    	margin: 50px 0 0 0;
+	}
+	.gnav li {
+	    display: inline-block;
+	    margin: 0;
+	    width: 100%;
+	    text-align: center;
+
+	}
+	.whiteBall1, .whiteBall2, .whiteBall3, 
+	.whiteBall4, .whiteBall5, .whiteBall6{
+		display: none;
+	}
+	section.about .left .text {
+	    text-align: center;
+	}
+	section.about .left img{
+		float: none;
+	    margin: 0 auto 40px;
+	}
+}
+@media screen and (max-width: 460px) {
+	.button-group .button {
+	    padding: 10px 0;
+	    display: block;
+	}
+	.grid-sizer {
+		    width: 100%;
+		}
+	section.about .introCard .right {
+	    padding: 0 35px;
+	}
+	section.skills {
+	    padding: 20px;
+	    border: 35px solid #e9e9e8;
+	}
+	section.about {
+	    border-top: 35px solid #fff;
+	    border-right: 35px solid #fff;
+	    border-left: 35px solid #fff;
+	    border-bottom: 35px solid #fff;
+	}
+}
