@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<style type="text/css">
+
+.copyR{
+		position: absolute;
+		bottom: 0;z-index: 999;
+	}
+	.copyR:before{
+		display: block;
+		content: '@Redidea 紅點子設計';
+		color: #666;
+	}
+body{  background: #eee; margin:0; padding:0;}
+.space {  
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+.space .Redidea {
+  position: absolute;
+  top: 50%;left: 50%;
+  z-index: 2;
+  -webkit-animation: Redideajump 4s 2s  cubic-bezier(.51,-0.26,.16,.81) infinite; 
+  animation:  Redideajump 4s 2s  cubic-bezier(.51,-0.26,.16,.81) infinite;
+}
+.Redidea .head{
+	position: absolute;
+	width:210px;
+	height:200px;
+	background:#F00;
+	top:-250px;
+	left:-50px;
+	border-radius: 50%;
+	z-index:10;  
+   -webkit-animation: headShow .8s  1 cubic-bezier(.59,.27,0,.82) both  ,
+   					  headMove 5s 1s  cubic-bezier(0,.2,.19,.64) infinite;   
+   animation: headShow .8s  1 cubic-bezier(.59,.27,0,.82) both  ,
+   			  headMove 5s 1s  cubic-bezier(0,.2,.19,.64) infinite;
+}
+.Redidea .head:before{
+	content: " ";
+	position: absolute;
+  top: -1px;
+  right: -6px;
+  z-index: 1;
+  height: 200px;
+  width: 210px;
+  border-radius: 50%;
+  border-right: 10px solid #C30;
+}/*大頭*/
+
+.Redidea .head .eyes{
+	position: absolute;
+	width:125px;
+	height:40px;
+	background:#fff;
+	z-index:50;
+	top:20px;
+	left:30px;
+	border-radius: 50%;
+	border: solid #fff;
+	border-width: 3px 10px 80px 10px;
+}/*眼白*/
+
+.Redidea .head .eyes .bot{
+	position:absolute;
+	background:#333;
+	width:50px;
+	height:50px;
+	border-radius: 50%;
+	margin:10px;
+	top:20px;
+	left:30px;	
+	z-index:55;
+	-webkit-animation: eyesbot 10s 1s  cubic-bezier(.59,.27,0,.82) infinite ,  
+					   eyesbotMove 5s 1s  cubic-bezier(0,.2,.19,.64) infinite;
+	animation: eyesbot 10s 1s  cubic-bezier(.59,.27,0,.82) infinite ,  
+			   eyesbotMove 5s 1s  cubic-bezier(0,.2,.19,.64) infinite;	
+}/*眼珠*/
+
+.Redidea .head .eyes .bot:before{
+	content: " ";
+	position: absolute;
+	width:20px;
+	height:20px;
+	background:#fff;
+	border-radius: 50%;
+	top:2px;
+	left:5px;
+}/*眼珠白光1*/
+.Redidea .head .eyes .bot:after{
+	content: " ";
+	position: absolute;
+	width:10px;
+	height:10px;
+	background:#fff;
+	border-radius: 50%;
+	top:15px;
+	left:20px;
+}/*眼珠白光2*/
+
+.Redidea .head  .hair{
+	position: absolute;
+	width: 60px;
+	height: 180px;
+	border-radius: 50%;
+	z-index: 1;
+	background-color: #F00;
+	-webkit-transform: skewX(-30deg);
+  	-ms-transform: skewX(-30deg);
+  	transform: skewX(-30deg);
+}/*頭上的角*/
+
+.Redidea .head  .hair1{top: -20px;left: 65px;}
+.Redidea .head  .hair2{top: -15px;left: 100px;
+}
+.Redidea .head  .mouth{
+	position: absolute;
+	width: 50px;
+	height: 20px;
+	top: 138px;
+	left: 75px;
+	border-radius: 50%;
+	border-bottom: 15px solid #fff;
+	z-index: 10;	
+	-webkit-animation: mouthMove 2s 1s  cubic-bezier(.59,.27,0,.82) infinite ;
+	animation: mouthMove 2s 1s  cubic-bezier(.59,.27,0,.82) infinite ;
+}/*嘴巴*/
+
+.Redidea .head  .mouth:before{
+	content: " ";
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 19px;
+	left: 31px;
+	border-style: solid;
+	border-width: 10px 5px 0 5px;
+	border-color: #666 transparent transparent transparent;
+}/*牙齒*/
+
+.Redidea  .body{
+	content: " ";
+	position: absolute;
+	top: -60px;
+	left: 22px;
+	border-radius: 20%;
+	z-index: 2;	
+	width: 30px;
+	height: 0;
+	border-style: solid;
+	border-width: 0 30px 90px 30px;
+	border-color: transparent transparent #c30 transparent;
+	-webkit-animation: bodyShow .6s .2s cubic-bezier(0,.2,.19,.64) both ;
+	animation: bodyShow .6s .2s cubic-bezier(0,.2,.19,.64) both ;
+}/*身體*/
+
+.shadow{
+	position: absolute;
+	z-index: 1;
+	background:#762700;
+	width:100px;
+	height:30px;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	margin:-10px 0 0 20px;	
+	 -webkit-animation:RedideaShow 1s  1 cubic-bezier(.59,.27,0,.82) both  ,
+	 				   bodysh 4s 2s  cubic-bezier(.51,-0.26,.16,.81) infinite; 
+	animation:RedideaShow 1s  1 cubic-bezier(.59,.27,0,.82) both  ,
+					   bodysh 4s 2s  cubic-bezier(.51,-0.26,.16,.81) infinite; 
+}/*影子*/
+
+
+@-webkit-keyframes headShow {
+	0% {-webkit-transform: scale(0) rotate(-35deg);
+		-ms-transform: scale(0) rotate(-35deg);
+		transform: scale(0) rotate(-35deg);}
+  55% {	-webkit-transform: scale(1.5)  rotate(10deg);
+  		-ms-transform: scale(1.5)  rotate(10deg);
+  		transform: scale(1.5)  rotate(10deg);}
+  100% {-webkit-transform: scale(1) rotate(5deg);
+  		-ms-transform: scale(1) rotate(5deg);
+		transform: scale(1) rotate(5deg);}	
+}
+
+@keyframes headShow {
+	0% {-webkit-transform: scale(0) rotate(-35deg);
+		-ms-transform: scale(0) rotate(-35deg);
+		transform: scale(0) rotate(-35deg);}
+  55% {	-webkit-transform: scale(1.5)  rotate(10deg);
+  		-ms-transform: scale(1.5)  rotate(10deg);
+  		transform: scale(1.5)  rotate(10deg);}
+  100% {-webkit-transform: scale(1) rotate(5deg);
+  		-ms-transform: scale(1) rotate(5deg);
+		transform: scale(1) rotate(5deg);}	
+}
+@-webkit-keyframes headMove {
+	0% {-webkit-transform: rotate(5deg);}
+  10% {-webkit-transform: rotate(10deg);}
+   50% {-webkit-transform: rotate(-5deg);}
+	65% {-webkit-transform: rotate(-15deg);}
+  85% {-webkit-transform: rotate(-5deg);}
+  100% {-webkit-transform: rotate(5deg);}	
+}
+@keyframes headMove {
+	0% {transform: rotate(5deg);}
+  10% {transform: rotate(10deg);}
+   50% {transform: rotate(-5deg);}
+	65% {transform: rotate(-15deg);}
+  85% {transform: rotate(-5deg);}
+  100% {transform: rotate(5deg);}	
+}
+@-webkit-keyframes mouthMove {
+	0% {-webkit-transform: scale(1,1);}
+	30% {-webkit-transform: scale(1,.8);}
+  75% {-webkit-transform: scale(.8,.5);}
+  90% {-webkit-transform: scale(1,1);}	
+}
+@keyframes mouthMove {
+	0% {transform: scale(1,1);}
+	30% {transform: scale(1,.8);}
+  75% {transform: scale(.8,.5);}
+  90% {transform: scale(1,1);}	
+}
+@-webkit-keyframes eyesbot {
+	1%,3%,41%,43% ,64%,66%, 84%,86% {-webkit-transform: scaleY(1) ;}
+	2%,42%,65%,85% {-webkit-transform: scaleY(.1);}
+}
+@keyframes eyesbot {
+	1%,3%,41%,43% ,64%,66%, 84%,86% {transform: scaleY(1) ;}
+	2%,42%,65%,85% {transform: scaleY(.1);}
+}
+@-webkit-keyframes eyesbotMove {
+	0%{top:20px;left:30px;}
+	25%{top:10px;left:-10px;}
+	50%{top:50px;left:0px;}
+	65%{top:60px;left:40px;}
+	85%{top:50px;left:60px;}
+	100%{top:20px;left:30px;}	
+}
+@keyframes eyesbotMove {
+	0%{top:20px;left:30px;}
+	25%{top:10px;left:-10px;}
+	50%{top:50px;left:0px;}
+	65%{top:60px;left:40px;}
+	85%{top:50px;left:60px;}
+	100%{top:20px;left:30px;}	
+}
+@-webkit-keyframes bodyShow {
+	0% {top:-250px;opacity:0;-webkit-transform: scale(0);}
+  50% {	top:-60px;opacity:1;-webkit-transform: scale(1.3);}
+  100% {top:-80px;-webkit-transform: scale(1);}
+}
+@keyframes bodyShow {
+	0% {top:-250px;opacity:0;transform: scale(0);}
+  50% {	top:-60px;opacity:1;transform: scale(1.3);}
+  100% {top:-80px;transform: scale(1);}
+}
+@-webkit-keyframes RedideaShow {
+	0%,40% {-webkit-transform: scale(0,0) ;}
+  85% {-webkit-transform: scale(1.2,1); }
+  100% {-webkit-transform: scale(1);}	
+}
+@keyframes RedideaShow {
+	0%,40% {transform: scale(0,0) ;}
+  85% {transform: scale(1.2,1); }
+  100% {transform: scale(1);}	
+}
+@-webkit-keyframes Redideajump {
+	0% {top:50%;-webkit-transform: scale(1);}
+  22% {	top:50%;-webkit-transform: scale(1.1,.9);left:49%;}
+  32% {	top:5%;-webkit-transform: scale(.9,1);left:50%; }
+  40% {	top:50%;-webkit-transform: scale(1.15,.9);}
+  55% {	top:50%;-webkit-transform: scale(1,1);} 
+  100% {top:50%;}	
+}
+@keyframes Redideajump {
+	0% {top:50%;transform: scale(1);}
+  22% {	top:50%;transform: scale(1.1,.9);left:49%;}
+  32% {	top:35%;transform: scale(.9,1);left:50%; }
+  40% {	top:50%;transform: scale(1.15,.9);}
+  55% {	top:50%;transform: scale(1,1);} 
+  100% {top:50%;}	
+}
+@-webkit-keyframes bodysh {
+	0% {-webkit-transform: scale(1);}
+  22% {-webkit-transform: scale(1,.9);margin-left:10px;}
+  32% {-webkit-transform: scale(.5,.2);margin-left:20px;}
+  40% {-webkit-transform: scale(1,.9);margin-left:25px;}
+  65% {-webkit-transform: scale(1,1);margin-left:20px;} 
+}
+@keyframes bodysh {
+	0% {transform: scale(1);}
+  22% {transform: scale(1,.9);margin-left:10px;}
+  32% {transform: scale(.5,.2);margin-left:20px;}
+  40% {transform: scale(1,.9);margin-left:25px;}
+  65% {transform: scale(1,1);margin-left:20px;} 
+}
+</style>
+</head>
+<body>
+<div class="space">
+<div class="Redidea">
+ 	<div class="head">
+    	<div class="eyes">
+        <div class="bot"></div>
+        </div>
+        <div class="mouth"></div>
+        <div class="hair hair1"></div>
+        <div class="hair hair2"></div>
+    </div>    
+    <div class="body"></div>
+ </div>
+<div class="shadow"></div>
+</div>
+<div class="copyR"></div>
+	
+</body>
+
+</html>
