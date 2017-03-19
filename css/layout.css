@@ -36,9 +36,27 @@ header.header{
     border-bottom: #fbcc68 5px solid;
     overflow: auto;
 }
+header.header.fixIt{
+	    padding: 10px 0 10px 0px;
+   	    position: fixed;
+   	    left: 0;
+   	    top: 0;
+   	    z-index: 99;
+   	    max-width: 100%;
+   	    box-shadow: 0px 2px 0px rgba(10, 10, 10, 0.31);
+}
+header.header.fixIt	.logo {
+	    display: block;
+	    width: 110px;
+	    margin-left: 15px;
+	    float: left;
+}
+header.header.fixIt .gnav li {
+    margin: 0 40px;
+}
 .logo{
 	display: block;
-    width: 200px;
+    width: 170px;
     margin-left: 20px;
     float: left;
 }
@@ -48,7 +66,7 @@ header.header{
 }
 .gnav li{
 	display: inline-block;
-	margin:20px 40px;
+	margin:10px 40px;
 	border-bottom: 3px solid #ffffff;
 	border-top: 3px solid #ffffff;
 }
@@ -79,7 +97,7 @@ header.header{
 
 /* ---- 分類瀑布流 ---- */
 .grid {
-  background: #DDD;
+  /* background: #DDD; */
   max-width: 100%;
 }
 .grid:after {
@@ -120,27 +138,41 @@ header.header{
   border: 2px solid #333;
   border-color: hsla(0, 0%, 0%, 0.7);
 } */
-.grid-sizer{ width: 33.3%; }
+.grid-sizer{ 
+	/* width: 33.3%;  */
+	width: 24%;
+
+}
 .element-item{
-	padding: 0 .2rem .4rem .2rem;
-    -webkit-filter: grayscale(100%);
+	margin: 0 .5% .8rem .5%;
+	border: 1px solid #dcdcdc;
+/* 	padding: 0 .4rem .8rem .4rem; */
+/*     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);   
-    filter: grayscale(100%);
-    transition: 0s;
+    filter: grayscale(100%); */
+    overflow: hidden;
 
 }
 .element-item:hover{
-    -webkit-filter: grayscale(0%);
+/*     -webkit-filter: grayscale(0%);
     -moz-filter: grayscale(0%);
     -ms-filter: grayscale(0%);
     -o-filter: grayscale(0%);   
     filter: grayscale(0%);
-	transition: 1s;
+	transition: .5s; */
+}
+.element-item:hover img{
+    -webkit-transform:scale(1.1);
+	-moz-transform:scale(1.1);
+	transform:scale(1.1);
+	opacity: .8;
+	transition: .3s;
 }
 .element-item img{
 	width: 100%;
+	transition: .2s;
 }
 /* 網頁技術 */
 section.skills{
@@ -497,8 +529,11 @@ div.footer{
 	   /*  margin: 20px auto; */
 	    padding: 20px 10px;
 	}
+	.element-item {
+	    margin: 0 1% .8rem 1%;
+	}
 	.grid-sizer {
-	    width: 50%;
+	    width: 48%;
 	}
 }
 @media screen and (max-width: 720px) {
@@ -557,6 +592,12 @@ div.footer{
 	    text-align: center;
 
 	}
+	header.header.fixIt .gnav li {
+	    margin: 0 0px;
+	}
+	.gnav li a {
+	    display: block;
+	}
 	.whiteBall1, .whiteBall2, .whiteBall3, 
 	.whiteBall4, .whiteBall5, .whiteBall6{
 		display: none;
@@ -566,7 +607,10 @@ div.footer{
 	}
 	section.about .left img{
 		float: none;
-	    margin: 0 auto 40px;
+	    margin: 0 auto 0px;
+	}
+	section.about .left h3 {
+	    margin-top: 40px;
 	}
 }
 @media screen and (max-width: 460px) {
