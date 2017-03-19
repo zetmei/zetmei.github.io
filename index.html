@@ -719,10 +719,12 @@
     <script src="js/grid3d.js"></script>
     <script src="js/layout.js"></script>    
     <script>
+$(function() {   
       new grid3D( document.getElementById( 'grid3d' ) );
+});  
     </script>
     <script>
-       
+$(function() {       
     // init Isotope
     var $grid = $('.grid').isotope({
       itemSelector: '.element-item',
@@ -760,7 +762,7 @@
     });
 
 
-    
+});      
 
 
 
